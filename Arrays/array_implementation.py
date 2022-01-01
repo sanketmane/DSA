@@ -22,8 +22,7 @@ class MyArray:
 
   def delete(self,index):
     for i in range(index,self.length-1):
-      self.data[i] = self.data[i+1] 
-      # there is no value at i+1 at the last index
+      self.data[i] = self.data[i+1]
 
     del self.data[self.length-1]
     self.length -= 1
