@@ -15,6 +15,8 @@ print(strings[2])
 """
 add element at end of array
 Since we are directly add 'e' at the end of array at a particular memory location, it is O(1)
+
+Actually, this is O(1) is called as "amortized O(1)". Read more about it here: https://en.wikipedia.org/wiki/Amortized_analysis
 """
 strings.append('e')
 
@@ -37,3 +39,5 @@ O(n) - just like insert, the indexes will need to rearranged
 strings.pop(1)
 
 print(strings)
+
+
