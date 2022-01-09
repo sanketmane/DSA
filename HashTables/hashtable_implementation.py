@@ -35,12 +35,13 @@ class HashTable:
     keysArray = []
     for x in range(len(self.data)):
       if self.data[x] != None:
-        keysArray.append(self.data[x][0][0])
+        for y in self.data[x]: # another loop to get keys in case of hash collisions scenario
+          keysArray.append(y[0])
     return keysArray
 
 
 
-myHashTable = HashTable(50)
+myHashTable = HashTable(2)
 
 myHashTable.set('grapes', 10000)
 print(myHashTable.data)
@@ -53,6 +54,10 @@ print(myHashTable.get('apples'))
 myHashTable.set('oranges', 12)
 print(myHashTable.data)
 print(myHashTable.get('oranges'))
+
+myHashTable.set('pears', 45)
+print(myHashTable.data)
+print(myHashTable.get('pears'))
 
 
 print(myHashTable.keys())
