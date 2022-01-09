@@ -1,4 +1,4 @@
-# Hash Table implementation
+  # Hash Table implementation
 
 class HashTable:
   def __init__(self,size):
@@ -30,7 +30,8 @@ class HashTable:
           return x[1]
     return None
 
-  # O(n) as we have to loop over all items in the hash table
+  # O(n^2) as we have to loop over all items in the hash table
+  # and do another loop in case of hash collisions 
   def keys(self): # function to get all keys for a hash table
     keysArray = []
     for x in range(len(self.data)):
