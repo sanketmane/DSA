@@ -94,10 +94,23 @@ class LinkedList:
       if index >= self.length:
         print("index shouldn't exceed length of the linkedlist")
       
-      leader = self.traverse_to_index(index - 1) # grab the leader
-      holding_pointer = self.traverse_to_index(index).next # grab node next to the node for given index
-      leader.next = holding_pointer # point the leader to next node
+      
+      current_node = self.traverse_to_index(index) # capture the current node
+      leader = self.traverse_to_index(index - 1) # capture the leader node
+      
+      # if current node and tail node is same then move tail to leader
+      if self.tail == current_node:
+        leader.next = None # as leader is tail node, the next pointer = None
+        self.tail = leader # set leader node as tail node
+      
+      # otherwise point the leader node to node next to removal node
+      else:
+        holding_pointer = self.traverse_to_index(index).next
+        leader.next = holding_pointer
+        holding_pointer.prev = leader
       self.length -= 1
+
+   
 
     # print element data values in a list
     def print_list(self):
