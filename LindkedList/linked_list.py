@@ -110,6 +110,33 @@ class LinkedList:
         holding_pointer.prev = leader
       self.length -= 1
 
+
+    # Reversing a linked list(interview question)
+    # A ------> B --------> C ----------> D -> None
+    #(first)  (second)     (third)
+    # we will basically move the first and second pointer till second is null
+
+    # A <- B <- C <- D <- None (Reverse)
+
+    def reverse(self):
+      if self.length == 0: # if there is only element in ll, then just return it.
+        return self.head
+
+      first = self.head # grab head element
+      second = self.head.next # grab the second element
+      self.tail = self.head # tail becomes head in reverse direction
+
+      while second: # idea is to loop till the second element is null
+        temp = second.next # grab the third element
+        second.next = first # set the pointer for second to first
+        first = second # make the current second as first(rememember we are moving left)
+        second = temp # make the current third as second(same as above)
+
+      self.head.next = None # make head point to null
+      self.head = first # after the above while loop finishes, earlier last element becomes first, so make it head
+
+      return self.print_list() # finally print the reverse array using the print list method
+
    
 
     # print element data values in a list
@@ -126,28 +153,30 @@ class LinkedList:
 
 myLinkedList = LinkedList()
 myLinkedList.append(10)
-print(myLinkedList.head.data, myLinkedList.head.next)
-print(myLinkedList.tail.data, myLinkedList.tail.next)
-print(myLinkedList.length)
+# print(myLinkedList.head.data, myLinkedList.head.next)
+# print(myLinkedList.tail.data, myLinkedList.tail.next)
+# print(myLinkedList.length)
 
 myLinkedList.append(20)
-print(myLinkedList.head.data, myLinkedList.head.next)
-print(myLinkedList.tail.data, myLinkedList.tail.next)
-print(myLinkedList.length)
+# print(myLinkedList.head.data, myLinkedList.head.next)
+# print(myLinkedList.tail.data, myLinkedList.tail.next)
+# print(myLinkedList.length)
 
 myLinkedList.prepend(55)
-print(myLinkedList.head.data, myLinkedList.head.next)
-print(myLinkedList.tail.data, myLinkedList.tail.next)
-print(myLinkedList.length)
+# print(myLinkedList.head.data, myLinkedList.head.next)
+# print(myLinkedList.tail.data, myLinkedList.tail.next)
+# print(myLinkedList.length)
 
 myLinkedList.insert(3,66)
-print(myLinkedList.head.data, myLinkedList.head.next)
-print(myLinkedList.tail.data, myLinkedList.tail.next)
-print(myLinkedList.length)
+# print(myLinkedList.head.data, myLinkedList.head.next)
+# print(myLinkedList.tail.data, myLinkedList.tail.next)
+# print(myLinkedList.length)
 
-myLinkedList.remove(3)
-print(myLinkedList.head.data, myLinkedList.head.next)
-print(myLinkedList.tail.data, myLinkedList.tail.next)
-print(myLinkedList.length)
+# myLinkedList.remove(3)
+# print(myLinkedList.head.data, myLinkedList.head.next)
+# print(myLinkedList.tail.data, myLinkedList.tail.next)
+# print(myLinkedList.length)
 
 myLinkedList.print_list()
+
+myLinkedList.reverse()

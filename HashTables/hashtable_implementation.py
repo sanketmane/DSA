@@ -17,8 +17,8 @@ class HashTable:
   def set(self,key,val):
     index = self._hash(key) # the above hash function returns an index value
     if self.data[index] == None:
-      self.data[index] = [] # create an array to solve the problem of hash collisions
-    self.data[index].append([key, val]) # push new array of key,val pairs to the (above) just created array.
+      self.data[index] = [] # create an array to solve the problem of hash collisions. Better option is to create a LinkedList instead of array here.
+    self.data[index].append([key, val]) # push new array of key,val pairs to the (above) just created array. 
     return self.data
 
   # O(1) mostly except for hash collision case where it is O(n)
