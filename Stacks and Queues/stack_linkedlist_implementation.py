@@ -1,4 +1,5 @@
 # Stack implementation using Linked Lists.
+# Like we had head and tail part in Linked Lists, we will use a similar approach in stacks as well. Here we will use "top" and "bottom" to indicate what is at the top and bottom of the stack respectively.
 
 class Node:
   def __init__(self, data):
