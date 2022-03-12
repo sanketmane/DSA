@@ -1,6 +1,7 @@
 # Stack implementation using Linked Lists.
 # Like we had head and tail part in Linked Lists, we will use a similar approach in stacks as well. Here we will use "top" and "bottom" to indicate what is at the top and bottom of the stack respectively.
 
+# Create a node
 class Node:
   def __init__(self, data):
     self.data = data
@@ -8,10 +9,12 @@ class Node:
 
 class Stack:
   def __init__(self):
+    # Initialize your stack with basic attributes like LinkedList
     self.top = None
     self.bottom = None
     self.length = 0
 
+  # check whats at the top of the stack
   def peek(self):
     if self.length > 0:
       return self.top.data
@@ -24,7 +27,8 @@ class Stack:
 # Microsoft
 # Amazon
 # Google (bottom)
-  
+
+  # push at the end of the stack
   def push(self,data):
     node = Node(data)
 
@@ -37,7 +41,7 @@ class Stack:
       self.top = node
       self.length += 1
       
-    
+  # pop from the end of the stack  
   def pop(self):
     if self.length == 0:
       print("Stack is empty, cannot pop further!")
@@ -46,7 +50,7 @@ class Stack:
     self.top = self.top.next
     self.length -= 1
 
-
+  # check if stack is empty
   def is_empty(self):
     if self.length == 0:
       return True
