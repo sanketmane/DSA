@@ -6,6 +6,7 @@ def findFactorialRecursive(number):
   """
   This is the base case.
   We always want to return 1 for anything < 2 since 1! and 0! is always 1
+  Big O -> O(n) since we loop based on 'number' of times.
   """
   if number < 2:
     return 1
@@ -22,6 +23,7 @@ def findFactorialRecursive(number):
 def findFactorialIterative(number):
   """
   Same as above - we always want to return 1 for anything < 2 since 1! and 0! is always 1, hence we start with val = 1 and the loop starts from 2.
+  Big O -> O(n) since we loop based on 'number' of times.
   """
   val = 1
   for _ in range(2,number+1):
