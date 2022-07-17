@@ -65,14 +65,28 @@ class BinarySearchTree:
                 elif currentNode.data == node.data:
                     return currentNode
 
-
+    """
+    Need to complete remove method
+    """
     def remove(self,data):
       node = Node(data)
 
       if self.root == node:
-        
         self.root = self.root.right
-        
+
+    """
+    Tree traversal i.e return all values in a tree.
+    (Inorder: Left, Root, Right)
+    """
+    def traversal(self):
+      if self.root != None:
+         self.print_tree(self.root)
+
+    def print_tree(self, currentNode):
+      if currentNode != None:
+        self.print_tree(currentNode.left)
+        print(currentNode.data)
+        self.print_tree(currentNode.right)
 
 
 # Tree
@@ -94,4 +108,6 @@ tree.insert(1)
 # print(tree.root.right.data)
 # print(tree.root.left.right.data)
 
-print(tree.lookup(1).right)
+# print(tree.lookup(1).right)
+
+tree.traversal()
