@@ -40,6 +40,10 @@ class Stack:
       node.next = self.top
       self.top = node
       self.length += 1
+      """
+      Note that we are not changing bottom part in the else loop since it is alrady taken
+      care when there is not element in the stack i.e the 'if' part of the loop.
+      """
       
   # pop from the end of the stack  
   def pop(self):
