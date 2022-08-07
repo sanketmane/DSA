@@ -69,7 +69,7 @@ class LinkedList:
       if index >= self.length:
         return self.append(data)
       
-      # if index = = then prepend
+      # if index = 0 then prepend
       if index == 0:
         return self.prepend(data)
       
@@ -105,7 +105,7 @@ class LinkedList:
       
       # otherwise point the leader node to node next to removal node
       else:
-        holding_pointer = self.traverse_to_index(index).next
+        holding_pointer = current_node.next
         leader.next = holding_pointer
         holding_pointer.prev = leader
       self.length -= 1
@@ -126,7 +126,7 @@ class LinkedList:
       second = self.head.next # grab the second element
       self.tail = self.head # tail becomes head in reverse direction
 
-      while second: # idea is to loop till the second element is null
+      while second: # idea is to loop till the second element is null(this "-->" direction)
         temp = second.next # grab the third element
         second.next = first # set the pointer for second to first
         first = second # make the current second as first(rememember we are moving left)
